@@ -13,13 +13,17 @@
 
 
 function reverseNumber(num) {
-  let reversed = 0;
-  for (reversed; num != 0; num = (num / 10) | 0) {
-    reversed = reversed * 10 + (num % 10);
-  }
-  return reversed;
+    let numStr = num.toString();
+    let reversedStr = "";
+
+    for (let i = numStr.length - 1; i >= 0; i--) {
+        reversedStr += numStr[i];
+    }
+
+    return parseInt(reversedStr, 10);
 }
 
+// Example usage
 let x = 532443;
 console.log(reverseNumber(x));
 
