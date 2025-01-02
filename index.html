@@ -12,81 +12,74 @@
     <script>
 
 
-function reverseNumber(num) {
-    let numStr = num.toString();
-    let reversedStr = "";
-
-    for (let i = numStr.length - 1; i >= 0; i--) {
-        reversedStr += numStr[i];
-    }
-
-    return parseInt(reversedStr, 10);
-}
-
-// Example usage
-let x = 532443;
-console.log(reverseNumber(x));
-
-
-let ar = [5, 3, 2, 4, 4, 3];
+let ar=[5,3,2,4,4,3];
 rev(ar);
-function rev(ar) {
-  let revarray = [];
-  for (let i = ar.length - 1, j = 0; i >= 0; i--, j++) {
-    revarray[j] = ar[i];
-  }
-  console.log(revarray);
+function rev(ar){
+    let revarray=[];
+for(let i=ar.length-1,j=0;i>=0;i--,j++){
+revarray[j]=ar[i];
+}
+console.log(revarray)
 }
 
-for (let i = 0; i <= 15; i++) {
-  if (i % 2 == 0) {
-    console.log(i + " This Number is EVEN");
-  } else if (i % 2 == 1) {
-    console.log(i + " This Number is ODD");
-  }
+for(let i=0;i<=15;i++){
+    if(i%2==0)
+    console.log(i+"is even");
+   else if(i%2==1)
+        console.log(i+"is odd");
 }
 
-function evenDash(input) {
-  let numberString = input.toString();
-  let result = "";
 
-  for (let i = 0; i < numberString.length; i++) {
-    result += numberString[i];
-    if (
-      i < numberString.length - 1 &&
-      parseInt(numberString[i]) % 2 === 0 &&
-      parseInt(numberString[i + 1]) % 2 === 0
-    ) {
-      result += "-";
-    }
-  }
 
-  return result;
+let str="orange";
+
+revstring(str);
+function revstring(a){
+console.log(a);
+let arr = a.split("");
+
+for(let i=0;i<arr.length;i++){
+for(let j=i;j<arr.length;j++){
+if(arr[i]>arr[j]){
+  let t=arr[i];
+  arr[i] = arr[j];
+  arr[j] = t;
+
 }
 
-let inputDash = "025468";
-let outputDash = evenDash(inputDash);
-console.log(outputDash);
-
-function sortAlpha(input) {
-  let lowercase = input.toLowerCase();
-  let sortingString = lowercase.split("").sort().join("");
-
-  return sortingString;
+}
+  console.log(arr[i]);
 }
 
-let input = "Orange";
-let output = sortAlpha(input);
-console.log(output);
+}
 
+
+ let num = prompt("Enter Number");
+let s2 = "";
+
+for (let i = 0; i < num.length ; i++) {
+  if (+num[i] % 2 == 0 && +num[i + 1] % 2 == 0){
+     s2 += num[i] + "-";
+} 
+else if(+num[i]%2==0 && +num[i + 1] % 2 != 0)
+    s2 += num[i] ;
+
+  else 
+  s2 += num[i];
+}
+
+console.log(s2);
 
 
 function AgeChecker(age) {
-  console.log(age >= 18 ? "The user is Adult" : "The user is Minor");
+  return age >= 18 ? "The user is Adult" : "The user is Minor";
 }
 
-AgeChecker(20);
-AgeChecker(15);
+console.log(AgeChecker(20));
+console.log(AgeChecker(15));
+
+
+
     
     </script>
 </body>
